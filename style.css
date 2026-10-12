@@ -1,0 +1,67 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url("GameArea/background.png");
+    background-size: cover;
+}
+h1{
+    font-size: 10em;
+    font-family: 'Pirata One', 
+                 'Trebuchet MS', 
+                 'Comic Sans MS', 
+                 cursive;
+    letter-spacing: 3px;
+    padding: 50px;
+    margin: 10px;
+    color: gold;
+    text-shadow: 
+        -3px -3px 0 #000,
+         3px -3px 0 #000,
+        -3px  3px 0 #000,
+         3px  3px 0 #000,
+         8px  8px 0 #8b0000;
+
+}
+#score {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    margin: 0;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.5);    
+    border-radius: 10px;
+    backdrop-filter: blur(4px);           
+    font-family: 'Pirata One', 'Trebuchet MS', cursive;
+    font-size: 10rem;
+    color: gold;
+    text-shadow: 
+        -2px -2px 0 #000,
+         2px -2px 0 #000,
+        -2px  2px 0 #000,
+         2px  2px 0 #000,
+         4px  4px 0 #8b0000;
+}
+
+#mycharacter {
+    position: absolute;
+}
+#mycharacter img {
+    width: 20rem;      
+    height: 20rem;     
+    object-fit: contain;
+}
+
+#gameArea{
+    background-image: url("GameArea/gameArea.jpg");
+    background-size: cover;
+    position: relative;        
+    width: 120vh;
+    height: 80vh;
+    border: 2px transparent;
+    border-radius: 50px;
+    overflow: hidden;
+}
