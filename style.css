@@ -44,6 +44,11 @@ h1{
         -2px  2px 0 #000,
          2px  2px 0 #000,
          4px  4px 0 #8b0000;
+    transition: color 0.15s ease, transform 0.15s ease;
+}
+#score.pop {
+    color: lime;               
+    transform: scale(1.3);    
 }
 
 #mycharacter {
@@ -52,6 +57,20 @@ h1{
 #mycharacter img {
     width: 20rem;      
     height: 20rem;     
+    object-fit: contain;
+}
+#mycoin {
+    position: absolute;
+    width: 10rem;
+    height: 10rem;
+    margin: 0;
+    padding: 0;
+}
+
+#mycoin img {
+    width: 100%;
+    height: 100%;
+    display: block;
     object-fit: contain;
 }
 

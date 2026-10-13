@@ -16,5 +16,5 @@ A 2D coin-collecting game built with vanilla HTML, CSS, and JavaScript.
 ## 🚀 Run It Locally
 
 1. Clone the repo:
-   ```bash
-   git clone https://github.com/ALIMN9/coin-collector-game.git
+
+git clone https://github.com/ALIMN9/coin-collector-game.git
