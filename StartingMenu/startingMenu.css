@@ -1,0 +1,214 @@
+body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url("../Resources/Starting_Menu.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    
+}
+
+.pixelify{
+  font-family: "Pixelify Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#pregame {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    width: 50vw;
+    min-height: 50vh;
+    padding: 20px;
+    z-index: 2000;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+
+    text-align: center;
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 1.5rem;
+    color: #c9a247;
+    background-color: rgba(13, 31, 51, 0.94);
+    border: 4px solid gold;
+    border-radius: 20px;
+    box-shadow: 0 0 0 150vmax rgba(0, 0, 0, 0.4);
+    filter: brightness(1.1) contrast(1.1) saturate(1.1);
+    animation: slideIn 1.1s ease-out forwards;
+}
+@keyframes slideIn {
+    from { transform: translate(calc(-50% - 100vw), -50%); }
+    to   { transform: translate(-50%, -50%); }
+}
+
+#pregame h3,
+#pregame p { 
+    font-size: 10rem;
+    margin: 0; 
+}
+
+#logo { width: 30%; height: auto; }
+
+#welcomeBtn {
+    position: absolute;
+    bottom: 100px;
+    right: 100px;
+    padding: 15px 40px;
+    font-family: inherit;
+    font-size: 5rem;
+    color: #0d1f33;
+    background-color: #c9a247;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+}
+#welcomeBtn:hover {
+    bottom: 75px;
+    right: 75px;
+    padding: 30px 55px;
+    background-color: #edbf54;
+}
+#luffy_welcoming {
+    position: absolute;
+    width: 30vw;
+    height: auto;
+    left: -20vw;              
+    bottom: -25vh;           
+    pointer-events: none;   
+}
+#pregame::after {
+    content: "";
+    position: absolute;
+    left: 0;                       
+    bottom: -44px;                
+    width: 0;
+    height: 0;
+    border-top: 40px solid gold;  
+    border-right: 60px solid transparent; 
+    border-left: 0;
+}
+/*
+#pregame{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid black;
+    z-index: 2000;
+    text-align: center;
+    font-size: 10rem;
+    font-family:"Pixelify Sans", sans-serif;
+    color: #c9a247;
+    margin-top: 26vh;
+    margin-left: 26vw;
+    padding: 30px;
+    opacity: 94%;
+    border: gold;
+    background-color: #0d1f33;
+    width: 50vw;
+    height: 50vh;
+    gap: 2px;
+}
+
+#logo{
+    border: 3px solid black;
+    height: 25%;
+    width: 25%;
+    top: 25%;
+    left: 35%;
+}
+
+#welcomeBtn{
+    top: 100px;
+    left: 250px;
+    border: 3px solid black;
+    padding: 30px;
+    font-size: 4rem;
+    background-color: #c9a247;
+}*/
+
+#start {
+    font-family: 'Pirata One', 'Trebuchet MS', cursive;
+    font-size: 5rem;
+    letter-spacing: 3px;
+    color: #f5e6c8;                      
+    
+    width: 15em;
+    height: 3em;
+    top: 56%;
+    left: 41%;
+    position: absolute;
+    text-align: center;
+    display: block;
+    cursor: pointer;
+
+    background: linear-gradient(#1e3a5f, #0d1f33);   
+    border: 4px solid #c9a247;            
+    border-radius: 25px;
+    cursor: pointer;
+    
+    text-shadow: 2px 2px 0 #000;
+    box-shadow: 
+        inset 0 0 0 3px #0d1f33,          
+        inset 0 0 10px rgba(0, 0, 0, 0.6),
+        0 6px 0 #0a1625,                 
+        0 8px 15px rgba(0, 0, 0, 0.5);  
+    
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+#start:hover {
+    transform: scale(1.1);
+    transition: transform 0.15s ease; 
+    box-shadow: 
+        inset 0 0 0 3px #0d1f33,
+        inset 0 0 10px rgba(0, 0, 0, 0.6),
+        0 8px 0 #0a1625,
+        0 10px 20px rgba(0, 0, 0, 0.6);
+}
+
+#start:active {
+    transform: translateY(4px);
+    box-shadow: 
+        inset 0 0 0 3px #0d1f33,
+        0 2px 0 #0a1625;
+}
+#muteBtn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    
+    box-sizing: border-box;
+    width: 16rem;
+    height: 16rem;
+    font-size: 8rem;
+    line-height: 1;
+    
+    background: rgba(0, 0, 0, 0.6);
+    color: gold;
+    border: 20px solid gold;
+    border-radius: 100%;
+    cursor: pointer;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    transition: transform 0.15s ease, background 0.15s ease;
+}
+
+#muteBtn:hover {
+    transform: scale(1.1);
+    background: rgba(255, 215, 0, 0.3);
+}

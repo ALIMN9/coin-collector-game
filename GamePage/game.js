@@ -1,3 +1,25 @@
+const muteBtn = document.getElementById("muteBtn");
+let isMuted =true;
+const Gamesound = new Audio("../Resources/Sounds/gameSound.wav");
+ Gamesound.loop = true;
+Gamesound.volume = 0.6;
+
+const coinCollection = new Audio("../Resources/Sounds/coinCollection.wav");
+coinCollection.volume = 0.6;
+
+
+muteBtn.addEventListener("click", () => {
+    isMuted = !isMuted;
+    
+    if (isMuted) {
+        Gamesound.pause();
+        muteBtn.textContent = "🔇";
+    } else {
+        Gamesound.play();
+        muteBtn.textContent = "🔊";
+    }
+});
+
 const Luffy = document.getElementById(`mycharacter`);
 let Luffyimg = document.getElementById(`Luffyimg`);
 const LuffyMap = document.getElementById(`gameArea`);
@@ -35,27 +57,28 @@ setInterval(()=>{
     if(frames.coinframes > 9){
         frames.coinframes = 1;
     }
-    Coinimg.src = `Coin/coin${frames.coinframes}.png`;
+    Coinimg.src = `../Resources/Coin/coin${frames.coinframes}.png`;
 },100); 
 
 function checkCollision(){
-            const LuffyL = X;
-            const LuffyR = X + Luffy.offsetWidth/2;
-            const LuffyT = Y;
-            const LuffyB = Y + Luffy.offsetHeight/2;
+        const LuffyL = X;
+        const LuffyR = X + Luffy.offsetWidth/2;
+        const LuffyT = Y;
+        const LuffyB = Y + Luffy.offsetHeight/2;
 
-            const CoinL = Coin.offsetLeft;
-            const CoinR = CoinL + Coin.offsetWidth/2;
-            const CoinT = Coin.offsetTop;
-            const CoinB = CoinT + Coin.offsetHeight/2;
+        const CoinL = Coin.offsetLeft;
+        const CoinR = CoinL + Coin.offsetWidth/2;
+        const CoinT = Coin.offsetTop;
+        const CoinB = CoinT + Coin.offsetHeight/2;
 
-            const isTouching = LuffyL < CoinR &&
-                   LuffyR > CoinL &&
-                   LuffyB > CoinT &&
-                   LuffyT < CoinB ;
+        const isTouching = LuffyL < CoinR &&
+                           LuffyR > CoinL &&
+                           LuffyB > CoinT &&
+                           LuffyT < CoinB ;
 
             if(isTouching){
             Score++;
+            coinCollection.play();
             ScoreElement.textContent = `Score: ${Score}`;
             ScoreElement.classList.add("pop");
             setTimeout(()=>{
@@ -82,7 +105,7 @@ document.addEventListener("keydown",event => {
                  if(frames.up > 6){
                     frames.up=1;
                  }
-                 Luffyimg.src = `Character/up/up${frames.up}.png`
+                 Luffyimg.src = `../Resources/Character/up/up${frames.up}.png`
                 
                 Y -= moveAmount;
                 break;
@@ -92,7 +115,7 @@ document.addEventListener("keydown",event => {
                  if(frames.down > 6){
                     frames.down=1;
                  }
-                 Luffyimg.src = `Character/down/down${frames.down}.png`;
+                 Luffyimg.src = `../Resources/Character/down/down${frames.down}.png`;
                 
                 Y += moveAmount;
                 break;
@@ -102,7 +125,7 @@ document.addEventListener("keydown",event => {
                 if (frames.left > 6){
                     frames.left = 1;
                 }
-                Luffyimg.src = `Character/left/left${frames.left}.png`;
+                Luffyimg.src = `../Resources/Character/left/left${frames.left}.png`;
                 
                 X -= moveAmount;
                 break;
@@ -112,7 +135,7 @@ document.addEventListener("keydown",event => {
                  if(frames.right > 6){
                     frames.right=1;
                  }
-                 Luffyimg.src = `Character/right/right${frames.right}.png`;
+                 Luffyimg.src = `../Resources/Character/right/right${frames.right}.png`;
                 
                 X += moveAmount;
                 break;      
@@ -150,7 +173,7 @@ document.addEventListener("keydown",event => {
 
 document.addEventListener("keyup",event => {
     if(event.key.startsWith("Arrow")){
-        Luffyimg.src = "Character/Rest_Animation.gif";
+        Luffyimg.src = `../Resources/Character/still_position.gif`;
     }
 })
 

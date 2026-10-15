@@ -5,7 +5,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-image: url("GameArea/background.png");
+    background-image: url("../Resources/GameArea/background.png");
     background-size: cover;
 }
 h1{
@@ -75,7 +75,7 @@ h1{
 }
 
 #gameArea{
-    background-image: url("GameArea/gameArea.jpg");
+    background-image: url("../Resources/GameArea/gameArea.jpg");
     background-size: cover;
     position: relative;        
     width: 120vh;
@@ -83,4 +83,33 @@ h1{
     border: 2px transparent;
     border-radius: 50px;
     overflow: hidden;
+}
+#muteBtn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    
+    box-sizing: border-box;
+    width: 16rem;
+    height: 16rem;
+    font-size: 8rem;
+    line-height: 1;
+    
+    background: rgba(0, 0, 0, 0.6);
+    color: gold;
+    border: 20px solid gold;
+    border-radius: 100%;
+    cursor: pointer;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    transition: transform 0.15s ease, background 0.15s ease;
+}
+
+#muteBtn:hover {
+    transform: scale(1.1);
+    background: rgba(255, 215, 0, 0.3);
 }
